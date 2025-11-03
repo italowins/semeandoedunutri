@@ -1,0 +1,364 @@
+
+/* SEN exact layout — full CSS with all adjustments */
+:root{
+  --solution-card-h: 420px;
+  --solution-card-h-tablet: 420px;
+
+  --ink: #153c36;
+  --teal-dark: #008066;
+  --teal: #2eb09c;
+  --mint: #e2f4ef;
+  --orange: #ed8739;
+  --container: 1160px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Rubik", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  color:var(--ink);
+  background:#fff;
+  font-weight:400;
+}
+.container{width:min(100%, var(--container));margin-inline:auto;padding:0 24px}
+
+/* Header */
+.header{padding-top:20px}
+.topnav{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.topnav .link{color:#6a7f7a;font-weight:400;text-decoration:none!important}
+.pills{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+.pill{padding:8px 14px;border-radius:999px;font-weight:400;font-size:14px;color:#fff;display:inline-block;text-decoration:none!important}
+.pill--green{background:var(--teal-dark)}
+.pill--orange{background:var(--orange)}
+
+/* Hero */
+.hero{padding: 150px 0;}
+.hero-grid{display:grid;grid-template-columns:420px 1fr;align-items:center;gap: 88px;
+}
+.logo{max-width:360px;height:auto}
+.h1{margin:0;font-weight:400;line-height:1.05;color:var(--ink)}
+.h1 .line1{font-size:48px;font-weight:300}
+.h1 .line2{font-size:44px;font-weight:300}
+.h1 .line2 em{font-style:italic;font-weight:500}
+.h1 .line3{font-size:56px;}
+.subtitle{margin-top:14px;color:#5a6e6a;font-weight:400}
+
+/* Sobre Nós strip */
+.strip{
+    background: var(--teal-dark);
+    color: #fff;
+    position: relative;
+    padding: 100px 0; 
+}
+.strip .tab{
+position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 10px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #44ED73, #15CDCB);
+}
+.strip-inner{    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 32px;
+    align-items: start;}
+.strip-heading{font-size: 108px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #33FFD6;}
+.strip-list{margin:0;padding-left:18px;font-weight:400}
+.strip-list li{margin-bottom:10px}
+.strip-list strong{color:#e7fffb;font-weight:700}
+
+/* Idealizadores */
+.ideal{padding:100px 0}
+.ideal-grid{display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:start}
+.ideal-title{font-size: 108px;
+    color: var(--teal-dark);
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;  }
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch;position:relative}
+.card{background:var(--mint);border-radius:18px;padding:28px 22px;text-align:center;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.avatar{width:140px;height:140px;margin:0 auto 14px;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.4)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.name{margin:4px 0;font-size:20px;font-weight:800;color:var(--teal-dark)}
+.role{margin:0;color:#4c5f5b;font-size:13.5px;line-height:1.4;font-weight:400}
+.divider{position: absolute;
+    width: 7px;
+    height: 18%;
+    top: 6%;
+    background: linear-gradient(to right, #44ED73, #15CDCB);
+    border-radius: 2px;}
+.divider--left{left:-6px}
+.divider--right{left: 384px;}
+
+/* Note */
+.note{margin-top:22px;font-weight:400}
+.note ul{margin:0;padding-left:18px}
+.note li{margin-bottom:8px}
+.note strong{font-weight:800}
+
+/* Responsive */
+@media (max-width:1200px){
+  :root{
+  --solution-card-h: 420px;
+  --solution-card-h-tablet: 420px;
+--container:980px}
+  .hero-grid{grid-template-columns:360px 1fr;gap:22px}
+  .h1 .line1{font-size:clamp(32px,4.5vw,44px)}
+  .h1 .line2{font-size:clamp(28px,4vw,40px)}
+  .h1 .line3{font-size:clamp(36px,5vw,52px)}
+  .strip-heading{font-size:clamp(64px,9vw,96px)}
+  .ideal-title{font-size:clamp(56px,8vw,88px)}
+}
+@media (max-width:992px){
+  :root{
+  --solution-card-h: 420px;
+  --solution-card-h-tablet: 420px;
+--container:860px}
+  .topnav{gap:12px}
+  .hero-grid{grid-template-columns:1fr;gap:18px}
+  .strip-inner{grid-template-columns:1fr;gap:18px}
+  .ideal-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .divider{display:none}
+}
+@media (max-width:768px){
+  :root{
+  --solution-card-h: 420px;
+  --solution-card-h-tablet: 420px;
+--container:640px}
+  .container{padding:0 16px}
+  .pill{padding:8px 10px;font-size:12.5px}
+  .h1 .line1{font-size:clamp(26px,6.4vw,36px)}
+  .h1 .line2{font-size:clamp(22px,6vw,32px)}
+  .h1 .line3{font-size:clamp(30px,7vw,40px)}
+  .subtitle{font-size:14px}
+  .strip{padding:28px 0}
+  .strip .tab{width:44px;height:18px;top:-8px}
+  .strip-heading{font-size:clamp(44px,12vw,64px);line-height:.92}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:20px 16px}
+  .avatar{width:120px;height:120px;box-shadow:0 0 0 6px rgba(255,255,255,.5)}
+  .name{font-size:18px}
+  .role{font-size:13px}
+  .note{font-size:14px}
+}
+@media (max-width:420px){
+  .pill{padding:7px 10px;font-size:12px}
+  .h1 .line1{font-size:24px}
+  .h1 .line2{font-size:22px}
+  .h1 .line3{font-size:30px}
+  .logo{max-width:240px}
+  .strip-heading{font-size:44px}
+}
+
+
+/* ===== Fixed height + subtle hover for "Nossa Solução" cards ===== */
+.solution .s-card{
+  height: var(--solution-card-h);
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
+}
+.solution .s-media{
+  height: 180px;           /* fixed media height for consistent card layout */
+  aspect-ratio: auto;      /* override previous aspect ratio */
+}
+.solution .s-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+.solution .s-text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;    /* clamp description to 5 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Hover effect: slight lift, stronger shadow, and mint background */
+.solution .s-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  background: var(--mint);
+}
+
+/* Responsiveness: keep equal height on desktop/tablet; let it flow on phones */
+@media (max-width: 768px){
+  .solution .s-card{ height: auto; }
+
+/* ===== Hover fix for Solution cards (no bg swap, subtle motion) ===== */
+.solution .s-card{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  will-change: transform, box-shadow;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.solution .s-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  border-color: rgba(0,0,0,.12);
+  background: #fff; /* keep constant to avoid reflow artifacts */
+}
+
+  .solution .s-media{ height: auto; aspect-ratio: 16/9; }
+  .solution .s-text{ -webkit-line-clamp: unset; }
+}
+
+.solution .s-card{
+overflow: visible;
+background: #fff;
+border: 1px solid rgba(0,0,0,.08);
+transition: box-shadow .22s ease;
+will-change: box-shadow;
+}
+
+.solution .s-media img{
+border-top-left-radius: 18px;
+border-top-right-radius: 18px;
+}
+
+.solution .s-card:hover{
+box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.solution .s-media{
+height: 180px;
+aspect-ratio: auto;
+}
+
+.solution .s-body{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+gap: 8px;
+flex: 1;
+}
+
+
+/* ===== SOLUTION STABLE OVERRIDES v3 (no layout shift, fixed height, shadow-only hover) ===== */
+.solution{ overflow: visible !important; }
+.solution .solution-grid{ align-items: stretch; }
+.solution .s-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 18px;
+  overflow: visible !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: box-shadow .20s ease !important;
+  will-change: box-shadow;
+}
+.solution .s-media{ height: 180px; flex: 0 0 180px; }
+.solution .s-media img{
+  width: 100%; height: 100%; object-fit: cover;
+  border-top-left-radius: 18px; border-top-right-radius: 18px;
+}
+.solution .s-body{
+  flex: 1 1 auto;
+  display: flex; flex-direction: column;
+  padding: 16px 18px 20px; gap: 8px; min-height: 0;
+}
+.solution .s-text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+.solution .s-card:hover{ box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+
+@media (max-width: 768px){
+  .solution .s-card{ height: auto !important; }
+  .solution .s-media{ height: auto; aspect-ratio: 16/9; }
+  .solution .s-text{ -webkit-line-clamp: unset; }
+}
+
+
+
+/* ===== Solution grid layout: 4 per row (desktop), 2 (tablet), 1 (mobile) ===== */
+.solution .solution-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+@media (max-width: 1200px){
+  .solution .solution-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 768px){
+  .solution .solution-grid { grid-template-columns: 1fr !important; }
+}
+
+
+/* ===== SOLUTION SECTION BACKGROUND COLOR OVERRIDE (final) ===== */
+.solution {
+  background: #F08736 !important;
+}
+
+
+
+/* ===== SOLUTION SECTION BACKGROUND (Italo) ===== */
+.solution { background: #F08736 !important; }
+
+/* ===== SOLUTION TITLE STYLE (Italo) ===== */
+.solution .solution-title {
+  font-size: 108px !important;   /* fallback */
+  line-height: 0.95 !important;
+  text-align: center !important;
+  color: #FFF !important;
+}
+@supports (font-size: clamp(1px, 2vw, 100px)) {
+  .solution .solution-title {
+    font-size: clamp(40px, 8vw, 108px) !important;
+  }
+}
+
+/* ===== SOLUTION GRID 4/2/1 (Italo) ===== */
+.solution .solution-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+@media (max-width: 1200px){
+  .solution .solution-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 768px){
+  .solution .solution-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ===== SOLUTION CARDS STABLE HOVER + FIXED HEIGHT (Italo) ===== */
+.solution { overflow: visible !important; }
+.solution .s-card{
+  position: relative;
+  display: flex; flex-direction: column;
+  height: 420px;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 18px;
+  overflow: visible !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transition: box-shadow .20s ease !important;
+  will-change: box-shadow;
+}
+.solution .s-card:hover{ box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+.solution .s-media{ height: 180px; flex: 0 0 180px; aspect-ratio: auto; }
+.solution .s-media img{ width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 18px; border-top-right-radius: 18px; }
+.solution .s-body{ flex: 1 1 auto; display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 20px; min-height: 0; }
+.solution .s-text{ overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; }
+@media (max-width: 768px){
+  .solution .s-card{ height: auto !important; }
+  .solution .s-media{ height: auto; aspect-ratio: 16/9; }
+  .solution .s-text{ -webkit-line-clamp: unset; }
+}
+
+/* ===== SOLUTION PADDING RESPONSIVO (Italo) ===== */
+.solution { padding: clamp(24px, 6vw, 48px) 0 !important; }
